@@ -40,7 +40,7 @@ part2 (ln,ls) =
     in sum . map (product . map value) . filter ((==2) . length) . map (neighbours . snd) $ stars
 
 main = do  
-    text <- readFile "../inputs/d3.in"
-    let results = foldr ((\(l1,l2) (n,s) -> (l1++n,l2++s)) . uncurry parseLine) ([],[]) $ zip [0..] $ lines text
+    content <- parseDay "d3" parseLine
+    let results = foldr (\(l1,l2) (n,s) -> (l1++n,l2++s)) ([],[]) content
     print $ part1 results
     print $ part2 results

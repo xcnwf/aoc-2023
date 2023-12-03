@@ -36,17 +36,13 @@ getFirst subs line =
     in getFirst_rec line
 
 
-part2' :: [String] -> Int
-part2' content =
+part2 :: [String] -> Int
+part2 content =
     let fsts = map (getFirst litterals) content
         snds = map (getFirst rlitterals . reverse) content
     in sum $ zipWith (\a b -> 10 * a + b) fsts snds
 
 main = do
-    text <- parseDay "d1" id
-    print $ part1 text
-    print $ part2' text
-
---lower = 55512
---upper = 56252
-
+    text <- parseDay "d1" (const id)
+    print . part1 $ text
+    print . part2 $ text
