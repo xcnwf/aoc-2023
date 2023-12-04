@@ -9,9 +9,9 @@ Solutions will probably be in either Haskell, Rust or Python.
 Day | Star 1 | Star 2
 ----|:------:|:-----:
 1   | ⭐ | ⭐ 
-2   | - | -
-3   | - | -
-4   | - | -
+2   | ⭐ | ⭐
+3   | ⭐ | ⭐
+4   | ⭐ | ⭐
 5   | - | -
 6   | - | -
 7   | - | -
