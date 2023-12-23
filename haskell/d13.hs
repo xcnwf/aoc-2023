@@ -4,6 +4,7 @@ import Data.Maybe (isJust, isNothing, fromJust, listToMaybe, fromMaybe)
 import qualified Data.List.NonEmpty as NE
 import Debug.Trace (traceShowId)
 import Data.Bifunctor (second)
+import Data.List.Extra (groupOn)
 
 type Line = [Bool]
 type Board = [Line]
@@ -43,6 +44,6 @@ part2 = sum . map (getBoardScore 1)
 
 main = do
     content <- parseDay "d13" (const parseLine)
-    let boards = map (map fromJust . NE.toList) $ filter (isJust . NE.head) $ NE.groupWith isJust content
+    let boards = map (map fromJust) $ filter (isJust . head) $ groupOn isJust content
     print $ part1 boards
     print $ part2 boards
